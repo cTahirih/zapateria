@@ -7,7 +7,7 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">
-      <mat-toolbar-row>
+      <mat-toolbar-row [ngClass]="{hidden: !(isHandset$ | async)}">
         <span>Menu</span>
       </mat-toolbar-row>
     </mat-toolbar>
@@ -29,7 +29,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <div class="ed-item m-50 s-cross-center">
+      <div class="ed-item s-70 m-60 l-50 s-cross-center">
         <button
           class="s-mr-2"
           type="button"
@@ -41,7 +41,7 @@
         </button>
         <span class="sidenav_title">ZAPATERÍA</span>
       </div>
-      <div class="ed-item m-50 s-main-end">
+      <div class="ed-item s-30 m-40 l-50 s-main-end">
         <span><i class="far fa-bell s-mr-3 sidenav_icon"></i></span>
         <span><i class="far fa-user sidenav_icon"></i></span>
       </div>
