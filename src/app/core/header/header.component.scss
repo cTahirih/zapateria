@@ -34,7 +34,7 @@
   & .fa-2x {
     font-size: 1.5em;
     @media (min-width: 640px) {
-      font-size: 2em
+      font-size: 2em;
     }
   }
 }
@@ -53,7 +53,6 @@
 
 .sidenav_title {
   font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
   @media (min-width: 640px) {
     font-size: 25px;
   }
@@ -62,6 +61,38 @@
     font-size: 30px;
   }
 }
+
+.sidenav_fonts {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sidenav_blue {
+  color: $blue;
+}
+
+/*HOME */
+
+.home_title {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.mat-card-header {
+  & .mat-card-title {
+    font-size: 25px;
+    @media (min-width: 640px) {
+      font-size: 18px;
+    }
+    @media (min-width: 1440px) {
+      font-size: 23px;
+    }
+  }
+}
+
+
+
+
+
 
 
 
