@@ -2,15 +2,23 @@
   <mat-sidenav 
       #drawer
       class="sidenav"
-      [ngClass]="{hidden: !(isHandset$ | async)}"
+
       fixedInViewport="false"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar color="primary">
+      <span class="s-mr-1" [ngClass]="{hidden: !(isHandset$ | async)}">Menu</span>
+    </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Catálogos</a>
-      <a mat-list-item href="#">Operaciones</a>
+      <a mat-list-item href="#">
+        <span class="s-mr-1" [ngClass]="{hidden: !(isHandset$ | async)}">Catálogos</span>
+        <i class="far fa-2x fa-folder-open"></i>
+      </a>
+      <a mat-list-item href="#">
+        <span class="s-mr-1" [ngClass]="{hidden: !(isHandset$ | async)}">Operaciones</span>
+        <i class="fas fa-2x fa-file-signature"></i>
+      </a>
       <!--<a mat-list-item href="#"></a>-->
     </mat-nav-list>
   </mat-sidenav>
@@ -21,7 +29,7 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        > <!--*ngIf="isHandset$ | async"-->
         <mat-icon aria-label="Side nav toggle icon"><i class="fas fa-bars"></i></mat-icon>
       </button>
       <span>ZAPATERÍA</span>
