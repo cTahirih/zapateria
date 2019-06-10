@@ -5,7 +5,10 @@ import { MatToolbarModule,
          MatButtonModule,
          MatSidenavModule,
          MatIconModule,
-         MatListModule 
+         MatListModule,
+         MatMenuModule,
+  MatCardModule,
+
        } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,9 +30,13 @@ import { HeaderComponent } from './header/header.component';
     MatListModule,
     BrowserModule,
     BrowserAnimationsModule,
+    MatMenuModule,
+    MatCardModule,
+
   ],
   exports: [
     HeaderComponent
   ]
 })
 export class CoreModule { }
+
