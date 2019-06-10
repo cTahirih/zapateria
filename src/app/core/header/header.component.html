@@ -39,13 +39,61 @@
         > <!--*ngIf="isHandset$ | async"-->
           <i class="fas fa-2x fa-bars"></i>
         </button>
-        <span class="sidenav_title">ZAPATERÍA</span>
+        <span class="sidenav_title sidenav_fonts">ZAPATERÍA</span>
       </div>
       <div class="ed-item s-30 m-40 l-50 s-main-end">
         <span><i class="far fa-bell s-mr-3 sidenav_icon"></i></span>
-        <span><i class="far fa-user sidenav_icon"></i></span>
+        <span mat-button [matMenuTriggerFor]="menu" class="sidenav_icon"><i class="far fa-user"></i></span>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="sidenav_fonts sidenav_blue">Cerrar sesión</button>
+          <button mat-menu-item class="sidenav_fonts sidenav_blue">Editar  perfil</button>
+        </mat-menu>
+        <span></span>
       </div>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <!-- HOME -->
+    <div class="ed-container s-main-center">
+      <div class="ed-item s-100">
+        <h1 class="home_title">Bienvenido</h1>
+      </div>
+      <div class="ed-item s-100 m-50 l-25 s-pt-2">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <span><i class="far fa-money-bill-alt"></i></span>
+            <mat-card-title>COMPRAS <br> TOTALES</mat-card-title>
+            <mat-card-subtitle>$0,00</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+      <div class="ed-item s-100 m-50 l-25 s-pt-2">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <span><i class="fas fa-shopping-cart"></i></span>
+            <mat-card-title>VENTAS <br> TOTALES</mat-card-title>
+            <mat-card-subtitle>$0,00</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+      <div class="ed-item s-100 m-50 l-25 s-pt-2">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <span><i class="fas fa-dollar-sign"></i></span>
+            <mat-card-title>COMPRA <br> ADEUDADA</mat-card-title>
+            <mat-card-subtitle>$0,00</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+      <div class="ed-item s-100 m-50 l-25 s-pt-2">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <span><i class="far fa-file-alt"></i></span>
+            <mat-card-title>FACTURA <br> A PAGAR</mat-card-title>
+            <mat-card-subtitle>$0,00</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
