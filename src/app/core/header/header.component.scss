@@ -1,4 +1,3 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '../../../styles.scss';
 
 .hidden {
@@ -14,7 +13,7 @@
 }
 
 .sidenav .mat-toolbar {
-  background: $ligth_red;
+  background: $light_red;
 }
 
 .sidenav {
@@ -25,9 +24,6 @@
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
   }
-  @media (min-width: 600px){
-    width: 80px;
-  }
 }
 
 .mat-toolbar.mat-primary {
@@ -36,6 +32,19 @@
   top: 0;
   z-index: 1;
 }
+
+.resize {
+  width: 400px;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(0,0,0,.6);
+}
+
+
+
+
+
 
 
 
