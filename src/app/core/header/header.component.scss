@@ -1,6 +1,10 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '../../../styles.scss';
 
+.hidden {
+  display: none;
+}
+
 .sidenav-container {
   height: 100%;
   position: fixed;
@@ -15,14 +19,15 @@
 
 .sidenav {
   width: 200px;
-  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
-  /*@media (min-width: 768px) {
-    display: none;
-  }*/
-}
-
-.hidden {
-  display: none;
+  border: none;
+  & .mat-list-item {
+    color: $blue;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+  }
+  @media (min-width: 600px){
+    width: 80px;
+  }
 }
 
 .mat-toolbar.mat-primary {
@@ -32,6 +37,6 @@
   z-index: 1;
 }
 
-.mat-drawer-shown {
-  background: rgba(0,0,0,0.5);
-}
+
+
+
