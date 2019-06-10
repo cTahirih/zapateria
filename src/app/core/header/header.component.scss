@@ -31,6 +31,12 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  & .fa-2x {
+    font-size: 1.5em;
+    @media (min-width: 640px) {
+      font-size: 2em
+    }
+  }
 }
 
 .resize {
@@ -46,9 +52,21 @@
 }
 
 .sidenav_title {
-  font-size: 25px;
+  font-size: 18px;
   font-family: 'Montserrat', sans-serif;
+  @media (min-width: 640px) {
+    font-size: 25px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 30px;
+  }
 }
+
+
+
+
+
 
 
 
