@@ -7,8 +7,10 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">
-      <mat-toolbar-row [ngClass]="{hidden: !(isHandset$ | async)}">
-        <span>Menu</span>
+      <mat-toolbar-row>
+        <div class="sidenav_logo">
+          <img src="../../../assets/shoe.png">
+        </div>
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list>
@@ -29,7 +31,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <div class="ed-item s-70 m-60 l-50 s-cross-center">
+      <div class="ed-item s-70 m-60 l-50 s-ml-2 s-cross-center">
         <button
           class="s-mr-2"
           type="button"
@@ -39,7 +41,7 @@
         > <!--*ngIf="isHandset$ | async"-->
           <i class="fas fa-2x fa-bars"></i>
         </button>
-        <span class="sidenav_title sidenav_fonts">ZAPATERÍA</span>
+        <span class="sidenav_title sidenav_fonts">TAHIRIH</span>
       </div>
       <div class="ed-item s-30 m-40 l-50 s-main-end">
         <span><i class="far fa-bell s-mr-3 sidenav_icon"></i></span>
