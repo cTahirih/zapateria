@@ -4,6 +4,10 @@
   display: none;
 }
 
+.mat-drawer-container {
+  background-color: $gray_light;
+}
+
 .sidenav-container {
   height: 100%;
   position: fixed;
@@ -13,21 +17,26 @@
 }
 
 .sidenav .mat-toolbar {
-  background: $light_red;
+  background: $dark_red;
 }
 
 .sidenav {
   width: 200px;
   border: none;
+  background-color: $dark_black;
   & .mat-list-item {
-    color: $blue;
+    color: $gray;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+    &:hover {
+      color: $white;
+      background-color: $ligth_black;
+    }
   }
 }
 
 .mat-toolbar.mat-primary {
-  background-color: $dark_red;
+  background-color: $light_red;
   position: sticky;
   top: 0;
   z-index: 1;
