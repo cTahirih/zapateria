@@ -1,0 +1,8 @@
+@import '../../../styles.scss';
+
+.mat-cards {
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 3px -1px rgba(0,0,0,.5), 0 3px 3px 0 rgba(0,0,0,.3), 0 3px 5px 0 rgba(0,0,0,.4);
+  }
+}

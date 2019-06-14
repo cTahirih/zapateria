@@ -1,0 +1,106 @@
+@import './../../styles.scss';
+
+.hidden {
+  display: none;
+}
+
+.sidenav .mat-toolbar {
+  background: $dark_red;
+}
+
+.sidenav {
+  width: 200px;
+  border: none;
+  background-color: $dark_black;
+
+}
+
+.mat-drawer-container {
+  background-color: $gray_light;
+}
+
+.sidenav-container {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.mat-toolbar.mat-primary {
+  background-color: $light_red;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  & .fa-2x {
+    font-size: 1.5em;
+    @media (min-width: 640px) {
+      font-size: 2em;
+    }
+  }
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(0,0,0,.6);
+}
+
+.sidenav_icon {
+  cursor: pointer;
+}
+
+.sidenav_title {
+  font-size: 18px;
+  @media (min-width: 640px) {
+    font-size: 25px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 30px;
+  }
+}
+
+.sidenav_fonts {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sidenav_blue {
+  color: $blue;
+}
+
+/*HOME */
+
+.home_title {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.mat-card-header {
+  & .mat-card-title {
+    font-size: 25px;
+    @media (min-width: 640px) {
+      font-size: 18px;
+    }
+    @media (min-width: 1440px) {
+      font-size: 23px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -12,14 +12,15 @@ import { MatToolbarModule,
        } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 /**
  * Components
  */
-import { HeaderComponent } from './header/header.component';
+
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [NotFoundComponent],
   imports: [
     CommonModule,
     LayoutModule,
@@ -35,7 +36,6 @@ import { HeaderComponent } from './header/header.component';
 
   ],
   exports: [
-    HeaderComponent
   ]
 })
 export class CoreModule { }

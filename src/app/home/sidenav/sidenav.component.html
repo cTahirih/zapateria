@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="sidenav_logo">
+      <img src="../../../assets/shoe.png">
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-nav-list>
+  <a mat-list-item class="sidenav_listItem" >
+    <i class="fas fa-2x fa-home s-mr-1"></i>
+    <span class="s-cross-center" routerLink="/" routerLinkActive="router-link-active">Inicio</span>
+  </a>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="far fa-2x fa-folder-open s-mr-1"></i>
+        <span class="s-cross-center">Catálogos</span>
+      </mat-expansion-panel-header>
+      <p class="slidenav_listtitle">Productos</p>
+      <p class="slidenav_listtitle" routerLink="/clients">Clientes</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-2x fa-file-signature s-mr-1"></i>
+        <span class="s-cross-center">Operaciones</span>
+      </mat-expansion-panel-header>
+      <p class="slidenav_listtitle">Ventas</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <!--<a mat-list-item href="#"></a>-->
+</mat-nav-list>
+
+
+

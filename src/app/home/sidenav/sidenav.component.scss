@@ -1,0 +1,96 @@
+@import '../../../styles.scss';
+
+.sidenav_logo {
+  width: 46px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.mat-toolbar.mat-primary {
+  background-color: $dark_red;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  & .fa-2x {
+    font-size: 1.5em;
+    @media (min-width: 640px) {
+      font-size: 2em;
+    }
+  }
+}
+
+.slidenav_listtitle {
+  margin: 0;
+  padding: 10px 0;
+  cursor: pointer;
+  &:hover {
+    font-size: 16px;
+  }
+}
+
+.slidenav_listtitle,
+.mat-expansion-panel-header {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.slidenav_listtitle,
+a.sidenav_listItem.mat-list-item,
+.mat-expansion-panel-content {
+  color: $gray;
+  font-family: 'Montserrat', sans-serif!important;
+}
+
+.sidenav_listItem,
+.mat-content {
+  &:hover {
+    color: white!important;
+    font-size: 16.5px;
+  }
+}
+
+a.sidenav_listItem.mat-list-item {
+  text-decoration: none;
+  height: auto;
+  padding: 15px 0;
+  margin: 5px 0;
+}
+
+.mat-expansion-panel-header {
+  font-size: 16px;
+  color: $gray;
+  padding: 0px!important;
+  & span.mat-expansion-indicator {
+    position: relative;
+    bottom: 6px;
+    &::after {
+      padding: 5px;
+      color: $gray!important;
+    }
+  }
+  &:hover {
+    background: none;
+  }
+}
+
+.mat-expansion-panel {
+  background-color: inherit;
+  box-shadow: none!important;
+  border-bottom-left-radius: 0px!important;
+  border-bottom-right-radius: 0px!important;
+  border-top-left-radius: 0px!important;
+  border-top-right-radius: 0px!important;
+  padding: 15px 16px;
+  margin: 5px 0;
+}
+
+.mat-expansion-panel-content {
+  & .mat-expansion-panel-body {
+    padding: 0px!important;
+  }
+}
+
+div.mat-expansion-panel-body {
+  padding: 0px!important;
+}
+
+
