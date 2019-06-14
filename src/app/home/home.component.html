@@ -1,46 +1,6 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport="true"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!(isHandset$ | async)">
-    <app-sidenav></app-sidenav>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <!--HEADER-->
-    <mat-toolbar color="primary">
-      <div class="ed-item s-70 m-60 l-50 s-ml-2 s-cross-center">
-        <button
-          class="s-mr-2"
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="drawer.toggle()"
-        > <!--*ngIf="isHandset$ | async"-->
-          <i class="fas fa-2x fa-bars"></i>
-        </button>
-        <span class="sidenav_title sidenav_fonts">TAHIRIH</span>
-      </div>
-      <div class="ed-item s-30 m-40 l-50 s-main-end">
-        <span><i class="far fa-bell s-mr-3 sidenav_icon"></i></span>
-        <span mat-button [matMenuTriggerFor]="menu" class="sidenav_icon"><i class="far fa-user"></i></span>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item class="sidenav_fonts sidenav_blue">Cerrar sesión</button>
-          <button mat-menu-item class="sidenav_fonts sidenav_blue">Editar  perfil</button>
-        </mat-menu>
-        <span></span>
-      </div>
-    </mat-toolbar>
-    <!--body-->
-    <div class="ed-container s-main-center">
-      <div class="ed-item s-100">
-        <h1 class="home_title">Bienvenido</h1>
-      </div>
-      <app-cards ngClass="ed-item s-100 m-50 l-25 s-pt-2" *ngFor="let cardInfo of data" [data]="cardInfo"></app-cards>
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="ed-container">
+  <div class="ed-item s-100">
+    <h1 class="home_title">Bienvenido</h1>
+  </div>
+  <app-cards ngClass="ed-item s-100 m-50 l-25 s-pt-2" *ngFor="let cardInfo of data" [data]="cardInfo"></app-cards>
+</div>
