@@ -1,5 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LayoutModule } from '@angular/cdk/layout';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatMenuModule
+
+} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,14 +23,21 @@ import { ListProductsModule } from './list-products/list-products.module';
     AppComponent
   ],
   imports: [
+    MatToolbarModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     HomeModule,
     SalesModule,
-    ListProductsModule
+    ListProductsModule,
+    LayoutModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
