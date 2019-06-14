@@ -1,19 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutModule } from '@angular/cdk/layout';
+
+import { HomeRoutingModule } from './home-routing.module';
 import {
   MatToolbarModule,
-  MatButtonModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule,
-  MatMenuModule,
   MatCardModule,
   MatExpansionModule,
-  MatInputModule
+  MatInputModule,
+  MatListModule,
 
 } from '@angular/material';
-import { HomeRoutingModule } from './home-routing.module';
 /*
 Components
 */
@@ -30,20 +26,17 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
     MatCardModule,
     MatExpansionModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatListModule,
   ],
   exports: [
     CardsComponent,
     HomeComponent,
+    SidenavComponent
   ]
 })
 export class HomeModule { }
+
