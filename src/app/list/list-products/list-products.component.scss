@@ -1,0 +1,10 @@
+@import '../../../styles.scss';
+
+.list-products_title {
+  margin: 1rem 0px;
+}
+
+.list-products_title--bg {
+  background-color: $gray;
+  color: $blue;
+}

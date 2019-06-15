@@ -1,6 +1,14 @@
 <div class="ed-container">
-  <div class="ed-item s-100">
+  <div class="ed-item s-100 home_title--bg">
     <h1 class="home_title">Bienvenido</h1>
   </div>
-  <app-cards ngClass="ed-item s-100 m-50 l-25 s-pt-2" *ngFor="let cardInfo of data" [data]="cardInfo"></app-cards>
+  <app-cards
+    ngClass="ed-item s-100 m-50 l-25 s-pt-2"
+    *ngFor="let cardInfo of data"
+    [icon]="cardInfo.iconClass"
+    [titleA]="cardInfo.title[0]"
+    [titleB]="cardInfo.title[1]"
+    [mount]="cardInfo.mount"
+  >
+  </app-cards>
 </div>

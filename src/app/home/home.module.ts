@@ -10,6 +10,7 @@ import {
   MatListModule,
 
 } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*
 Components
 */
@@ -31,6 +32,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatInputModule,
     MatToolbarModule,
     MatListModule,
+    BrowserAnimationsModule
   ],
   exports: [
     CardsComponent,
@@ -39,4 +41,3 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   ]
 })
 export class HomeModule { }
-

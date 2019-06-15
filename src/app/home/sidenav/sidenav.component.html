@@ -6,18 +6,18 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-nav-list>
-  <a mat-list-item class="sidenav_listItem" >
+  <a mat-list-item class="sidenav_listItem" routerLink="/" routerLinkActive="router-link-active">
     <i class="fas fa-2x fa-home s-mr-1"></i>
-    <span class="s-cross-center" routerLink="/" routerLinkActive="router-link-active">Inicio</span>
+    <span class="s-cross-center" >Inicio</span>
   </a>
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <i class="far fa-2x fa-folder-open s-mr-1"></i>
-        <span class="s-cross-center" routerLink="/list">Catálogos</span>
+        <span class="s-cross-center" >Catálogos</span>
       </mat-expansion-panel-header>
-      <p class="slidenav_listtitle" routerLink="/list/products">Productos</p>
-      <p class="slidenav_listtitle" routerLink="/list/clients">Clientes</p>
+      <p class="slidenav_listtitle" routerLink="/products">Productos</p>
+      <p class="slidenav_listtitle" routerLink="/clients">Clientes</p>
     </mat-expansion-panel>
   </mat-accordion>
   <mat-accordion>
@@ -31,3 +31,6 @@
   </mat-accordion>
   <!--<a mat-list-item href="#"></a>-->
 </mat-nav-list>
+
+
+

@@ -1,15 +1,13 @@
-import { LayoutModule } from '@angular/cdk/layout';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatButtonModule,
-  MatIconModule,
-  MatListModule,
-  MatSidenavModule,
-  MatToolbarModule,
-} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { HomeComponent } from './home.component';
+import { CardsComponent } from './cards/cards.component';
+import {
+  MatToolbarModule,
+  MatCardModule,
+} from '@angular/material';
 
 describe('HeaderComponent', () => {
   let component: HomeComponent;
@@ -17,15 +15,14 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent],
+      declarations: [
+        HomeComponent,
+        CardsComponent
+      ],
       imports: [
-        NoopAnimationsModule,
-        LayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatSidenavModule,
+        BrowserAnimationsModule,
         MatToolbarModule,
+        MatCardModule
       ]
     }).compileComponents();
   }));

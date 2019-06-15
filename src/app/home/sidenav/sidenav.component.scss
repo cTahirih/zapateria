@@ -48,6 +48,11 @@ a.sidenav_listItem.mat-list-item,
   }
 }
 
+.slidenav_listtitle {
+  &:focus {
+    outline: none;
+  }
+}
 a.sidenav_listItem.mat-list-item {
   text-decoration: none;
   height: auto;

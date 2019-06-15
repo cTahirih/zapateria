@@ -1,10 +1,12 @@
 @import './../../styles.scss';
-
 /*HOME */
 
 .home_title {
-  margin-top: 1rem;
-  margin-bottom: 0;
+  margin: 1rem 0px;
+}
+
+.home_title--bg {
+  color: $blue;
 }
 
 .mat-card-header {

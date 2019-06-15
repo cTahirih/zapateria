@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { SalesModule } from './sales/sales.module';
-import { ListProductsModule } from './list-products/list-products.module';
+import { ListProductsModule } from './list/list-products.module';
 
 @NgModule({
   declarations: [
@@ -40,4 +40,3 @@ import { ListProductsModule } from './list-products/list-products.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
