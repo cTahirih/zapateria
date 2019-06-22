@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { SalesModule } from './sales/sales.module';
-import { ListProductsModule } from './list/list-products.module';
+import { ListModule } from './list/list.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { ListProductsModule } from './list/list-products.module';
     CoreModule,
     HomeModule,
     SalesModule,
-    ListProductsModule,
+    ListModule,
     LayoutModule,
     MatButtonModule,
     MatSidenavModule,

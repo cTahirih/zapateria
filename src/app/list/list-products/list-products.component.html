@@ -2,4 +2,30 @@
   <div class="ed-item s-100 list-products_title--bg">
     <h1 class="list-products_title">Sus Productos</h1>
   </div>
+  <div class="ed-item s-100">
+    <div class="ed-container">
+      <ul class="ed-item s-30 list-product__name">
+        NOMBRE
+      </ul>
+      <ul class="ed-item s-30 list-product__price">
+        PRECIO
+      </ul>
+      <ul class="ed-item s-30 list-product__stock">
+        STOCK
+      </ul>
+    </div>
+  </div>
+  <div class="ed-item s-100" *ngFor="let product of listProducts">
+    <div class="ed-container">
+      <ul class="ed-item s-30 list-product__name">
+        {{product.nombre}}
+      </ul>
+      <ul class="ed-item s-30 list-product__price">
+        {{product.precio}}
+      </ul>
+      <ul class="ed-item s-30 list-product__stock">
+        {{product.stock}}
+      </ul>
+    </div>
+  </div>
 </div>

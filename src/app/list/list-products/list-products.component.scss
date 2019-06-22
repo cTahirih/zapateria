@@ -2,9 +2,15 @@
 
 .list-products_title {
   margin: 1rem 0px;
+  font-size: 1.5em;
+  @media (min-width: 660px) {
+    font-size: 1.8em;
+  }
+  @media (min-width: 1440px) {
+    font-size: 2em;
+  }
 }
 
 .list-products_title--bg {
-  background-color: $gray;
   color: $blue;
 }
