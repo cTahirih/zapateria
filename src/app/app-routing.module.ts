@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'products',
     component: ListProductsComponent
   },
+  {
+    path: 'products/page/:page',
+    component: ListProductsComponent
+  },
   { path: 'sales', component: SalesComponent },
   {
     path: 'not-found',
