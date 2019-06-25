@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ListRoutingModule } from './list-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
+
 /*
 * Components
 */
@@ -26,7 +28,8 @@ import { ListProductsService } from './services/list-products.service';
     CommonModule,
     ListRoutingModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,
+    MatTableModule
   ],
   providers: [
     ListProductsService
