@@ -2,30 +2,43 @@
   <div class="ed-item s-100 list-products_title--bg">
     <h1 class="list-products_title">Sus Productos</h1>
   </div>
+</div>
+<div class="ed-container s-main-center">
+  <table mat-table *ngIf="listProducts" [dataSource]="listProducts" class="ed-item s-95 xl-95 mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let product"> {{product.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let product"> {{product.nombre}} </td>
+    </ng-container>
+
+    <!-- price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let product"> {{product.precio}} </td>
+    </ng-container>
+
+    <!-- Stock Column -->
+    <ng-container matColumnDef="stock">
+      <th mat-header-cell *matHeaderCellDef> Stock </th>
+      <td mat-cell *matCellDef="let product"> {{product.stock}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
   <div class="ed-item s-100">
-    <div class="ed-container">
-      <ul class="ed-item s-30 list-product__name">
-        NOMBRE
-      </ul>
-      <ul class="ed-item s-30 list-product__price">
-        PRECIO
-      </ul>
-      <ul class="ed-item s-30 list-product__stock">
-        STOCK
-      </ul>
-    </div>
-  </div>
-  <div class="ed-item s-100" *ngFor="let product of listProducts">
-    <div class="ed-container">
-      <ul class="ed-item s-30 list-product__name">
-        {{product.nombre}}
-      </ul>
-      <ul class="ed-item s-30 list-product__price">
-        {{product.precio}}
-      </ul>
-      <ul class="ed-item s-30 list-product__stock">
-        {{product.stock}}
-      </ul>
-    </div>
+    <ul class="listproducts_pagesList s-row">
+      <li class="list_item" *ngFor="let page of pages">
+        <a [routerLink]="['/products/page', page]">
+          {{page}}
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
