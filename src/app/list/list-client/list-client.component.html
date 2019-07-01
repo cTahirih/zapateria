@@ -3,3 +3,48 @@
     <h1 class="list-clients_title">Sus Clientes</h1>
   </div>
 </div>
+<div class="ed-container s-main-center">
+  <table mat-table *ngIf="listClients" [dataSource]="listClients" class="ed-item s-95 xl-95 mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let client"> {{client.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let client"> {{client.nombres}} </td>
+    </ng-container>
+
+    <!-- lastnamefull Column -->
+    <ng-container matColumnDef="lastnamefull">
+      <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+      <td mat-cell *matCellDef="let client"> {{client.apellidoPaterno + ' ' + client.apellidoMaterno}} </td>
+    </ng-container>
+
+    <!-- birthdate Column -->
+    <ng-container matColumnDef="birthdate">
+      <th mat-header-cell *matHeaderCellDef> Fecha de Nacimiento </th>
+      <td mat-cell *matCellDef="let client"> {{client.fechaNacimiento}} </td>
+    </ng-container>
+
+    <!-- email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let client"> {{client.correoElectronico}} </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="ed-item s-100">
+    <ul class="listclients_pagesList s-row">
+      <li class="list_item" *ngFor="let page of pages">
+        <a [routerLink]="['/clients/page', page]">
+          {{page}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
