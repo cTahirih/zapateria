@@ -16,6 +16,10 @@ const routes: Routes = [
     component: ListClientComponent
   },
   {
+    path: 'clients/page/:page',
+    component: ListClientComponent
+  },
+  {
     path: 'products',
     component: ListProductsComponent
   },
