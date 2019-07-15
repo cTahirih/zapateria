@@ -1,8 +1,10 @@
 <mat-card class="example-card">
-  <mat-card-header>
-    <span><i ngClass="{{this.icon}}"></i></span>
-    <mat-card-title>{{this.titleA}} <br> {{this.titleB}}</mat-card-title>
-    <mat-card-subtitle>{{this.mount}}</mat-card-subtitle>
+  <mat-card-header ngclass="ed-container">
+    <div class="ed-item s-50">
+      <mat-card-title>{{this.titleA}} <br> {{this.titleB}}</mat-card-title>
+      <mat-card-subtitle>{{this.mount}}</mat-card-subtitle>
+    </div>
+    <span class="ed-item s-50 s-main-center s-cross-center"><i ngClass="{{this.icon + ' icon-' + this.id}} fa-3x"></i></span>
   </mat-card-header>
 </mat-card>
 

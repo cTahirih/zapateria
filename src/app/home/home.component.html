@@ -5,6 +5,7 @@
   <app-cards
     ngClass="ed-item s-100 m-50 l-25 s-pt-2"
     *ngFor="let cardInfo of data"
+    [id]="cardInfo.id"
     [icon]="cardInfo.iconClass"
     [titleA]="cardInfo.title[0]"
     [titleB]="cardInfo.title[1]"

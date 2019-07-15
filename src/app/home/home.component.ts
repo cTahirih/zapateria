@@ -10,24 +10,28 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   public data = [
     {
+      id: 1,
       iconClass: 'far fa-money-bill-alt',
       title: ['COMPRAS', 'TOTALES'],
-      mount: '$0,00'
+      mount: '$100,00'
     },
     {
+      id: 2,
       iconClass: 'fas fa-shopping-cart',
       title: ['VENTAS', 'TOTALES'],
-      mount: '$0,00'
+      mount: '$20,00'
     },
     {
+      id: 3,
       iconClass: 'fas fa-dollar-sign',
       title: ['COMPRA', 'ADEUDADA'],
-      mount: '$0,00'
+      mount: '$12,00'
     },
     {
+      id: 4,
       iconClass: 'far fa-file-alt',
       title: ['FACTURA', 'A PAGAR'],
-      mount: '$0,00'
+      mount: '$34,00'
     }
   ];
   constructor() {}
