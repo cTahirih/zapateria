@@ -1,18 +1,13 @@
 {
   "name": "zapateria",
   "version": "0.0.0",
-  "engines": {
-    "node": "8.11.1",
-    "npm": "5.6.0"
-  },
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --output-path angularapp  --aot --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -28,14 +23,13 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
-    "express": "^4.14.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
-    "@angular/cli": "^8.0.6",
-    "@angular/compiler-cli": "^7.2.15",
+    "@angular/cli": "~7.3.9",
+    "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
     "@fortawesome/fontawesome-free": "^5.8.1",
     "@types/jasmine": "~2.8.8",
