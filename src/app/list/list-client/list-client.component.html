@@ -14,13 +14,13 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Nombre </th>
-      <td mat-cell *matCellDef="let client"> {{client.nombres}} </td>
+      <td mat-cell *matCellDef="let client"> {{client.nombres | titlecase}} </td>
     </ng-container>
 
     <!-- lastnamefull Column -->
     <ng-container matColumnDef="lastnamefull">
       <th mat-header-cell *matHeaderCellDef> Apellidos </th>
-      <td mat-cell *matCellDef="let client"> {{client.apellidoPaterno + ' ' + client.apellidoMaterno}} </td>
+      <td mat-cell *matCellDef="let client"> {{client.apellidoPaterno + ' ' + client.apellidoMaterno | titlecase}} </td>
     </ng-container>
 
     <!-- birthdate Column -->
