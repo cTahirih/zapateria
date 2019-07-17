@@ -3,7 +3,7 @@
     <h1 class="list-products_title">Sus Productos</h1>
   </div>
 </div>
-<div class="ed-container s-main-center">
+<div class="ed-container s-main-center" *ngIf="!errorMessage">
   <table mat-table *ngIf="listProducts" [dataSource]="listProducts" class="ed-item s-95 xl-95 mat-elevation-z8">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
@@ -42,3 +42,8 @@
     </ul>
   </div>
 </div>
+<app-error-message
+  *ngIf="errorMessage"
+  [errorMessage]="this.errorMessage"
+>
+</app-error-message>

@@ -16,6 +16,7 @@ import { ListProductsComponent } from './list-products/list-products.component';
 * Services
 */
 import { ListProductsService } from './services/list-products.service';
+import {CoreModule} from '../core/core.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ListProductsService } from './services/list-products.service';
     ListRoutingModule,
     HttpClientModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    CoreModule
   ],
   providers: [
     ListProductsService

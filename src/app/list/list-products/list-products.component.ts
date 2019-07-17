@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ListProductsService } from '../services/list-products.service';
-import {tap} from 'rxjs/operators';
-
-export interface IProduct {
-  id: number;
-  nombre: string;
-  precio: number;
-  sku: string;
-  stock: number;
-}
+import {catchError, tap} from 'rxjs/operators';
+import { IProduct } from '../interfaces/product';
 
 @Component({
   selector: 'app-list-products',
@@ -17,10 +10,11 @@ export interface IProduct {
   styleUrls: ['./list-products.component.scss']
 })
 export class ListProductsComponent implements OnInit {
-
+  @Output() errorEmitter = new EventEmitter<string>();
+  errorMessage: string;
   listProducts: IProduct[];
   displayedColumns: string[] = ['position', 'name', 'price', 'stock'];
-  paginador: any;
+  paginator: any;
   pages: number[];
   constructor(
     private listProductService: ListProductsService,
@@ -39,10 +33,16 @@ export class ListProductsComponent implements OnInit {
             (response.content as IProduct[]).forEach(producto => {
               console.log(producto);
             });
+          }),
+          catchError(err => {
+            this.errorMessage = err.message;
+            console.log(err);
+            this.errorEmitter.emit(this.errorMessage);
+            return err;
           })
         ).subscribe(response => {
           this.listProducts = response.content as IProduct[];
-          this.paginador = response;
+          this.paginator = response;
           this.pages = new Array(response.totalPages).fill(1).map((value, index) => index + 1);
       });
     });

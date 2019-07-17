@@ -1,28 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {map, tap} from 'rxjs/operators';
-export interface IProduct {
-  id: number;
-  nombre: string;
-  precio: number;
-  sku: string;
-  stock: number;
-}
+import {Observable, throwError} from 'rxjs';
+import {catchError, map, tap} from 'rxjs/operators';
+import { IProduct } from '../interfaces/product';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListProductsService {
+  errorMessage: string;
   private URL_PRODUCTS =  'https://pos-zapateria.herokuapp.com/api/productos';
   constructor(
-    private HTTP: HttpClient
-  ) {
-    console.log('setvicio de productos');
-  }
+    private HTTP: HttpClient,
+    private router: Router
+  ) {}
 
   getListProducts(page: number): Observable<any> {
-    return this.HTTP.get(this.URL_PRODUCTS + '/page/' + page).pipe(
+    return this.HTTP.get(this.URL_PRODUCTS + '/pages/' + page).pipe(
       tap((response: any) => {
         (response.content as IProduct[]).forEach(product => {
           console.log(product);
@@ -34,10 +29,13 @@ export class ListProductsService {
         });
         return response;
       }),
-      tap((response: any) => {
-        (response.content as IProduct[]).forEach(producto => {
-          console.log(producto);
-        });
+      catchError(err => {
+        if (err.error.status === 500) {
+          this.router.navigate(['/not-found']);
+        } else {
+          this.errorMessage = err;
+        }
+        return throwError(this.errorMessage);
       })
     );
   }
