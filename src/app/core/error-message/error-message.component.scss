@@ -1,0 +1,11 @@
+@import '../../../styles.scss';
+.error-card {
+  border: 1px solid $dark_red;
+  background-color: $light_red-2;
+  border-radius: 3px;
+  margin: 0 15px;
+  padding: 15px;
+  & p {
+    margin: 0;
+  }
+}

@@ -10,13 +10,17 @@ import { HomeRoutingModule } from '../home/home-routing.module';
 
 
 @NgModule({
-  declarations: [NotFoundComponent, ErrorMessageComponent],
+  declarations: [
+    NotFoundComponent,
+    ErrorMessageComponent
+  ],
   imports: [
     CommonModule,
     LayoutModule,
     HomeRoutingModule
   ],
   exports: [
+    ErrorMessageComponent
   ]
 })
 export class CoreModule { }
