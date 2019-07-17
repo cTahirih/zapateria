@@ -1,19 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { ListClientService } from '../services/list-client.service';
 
 import { ActivatedRoute } from '@angular/router';
-import { tap } from 'rxjs/operators';
-export interface IClients {
-  dateRegister: string;
-  photo: string;
-  id: number;
-  name: string;
-  father_lastName: string;
-  mother_lastName: string;
-  email: string;
-  phoneNumber: string;
-  birthDate: string;
-}
+import {catchError, tap} from 'rxjs/operators';
+
+import { IClients } from '../interfaces/clients';
 
 @Component({
   selector: 'app-list-client',
@@ -21,10 +12,11 @@ export interface IClients {
   styleUrls: ['./list-client.component.scss']
 })
 export class ListClientComponent implements OnInit {
-
+  @Output() errorEmitter = new EventEmitter<string>();
+  errorMessage: string;
   listClients: IClients[];
   displayedColumns: string[] = ['position', 'name', 'lastnamefull', 'birthdate', 'email'];
-  paginador: any;
+  paginator: any;
   pages: number[];
   constructor(
     private listClientService: ListClientService,
@@ -39,14 +31,15 @@ export class ListClientComponent implements OnInit {
       }
       this.listClientService.getListClients(page)
         .pipe(
-          tap((response: any) => {
-            (response.content as IClients[]).forEach(client => {
-              console.log(client);
-            });
+          catchError(err => {
+            this.errorMessage = err.message;
+            console.log(err);
+            this.errorEmitter.emit(this.errorMessage);
+            return err;
           })
         ).subscribe(response => {
           this.listClients = response.content as IClients[];
-          this.paginador = response;
+          this.paginator = response;
           this.pages = new Array(response.totalPages).fill(1).map((value, index) => index + 1);
       });
     });
