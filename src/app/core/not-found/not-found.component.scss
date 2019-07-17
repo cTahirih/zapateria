@@ -1,0 +1,22 @@
+@import '../../../styles.scss';
+.not-found-page {
+  height: 91vh;
+}
+
+.not-found-msg {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.not-found-btn {
+  border-radius: 3px;
+  border: 1.5px solid $blue;
+  text-decoration: none;
+  color: $blue;
+  padding: 5px;
+  &:hover {
+    text-decoration: none;
+    background: $blue;
+    color: white;
+  }
+}
