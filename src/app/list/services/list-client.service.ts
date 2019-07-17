@@ -21,13 +21,14 @@ export interface IClients {
 export class ListClientService {
   errorMessage: string;
   private URL_CLIENTS =  'https://pos-zapateria.herokuapp.com/api/clientes';
+  private PROXY = 'https://cors-anywhere.herokuapp.com/';
   constructor(
     private HTTP: HttpClient,
     private router: Router
   ) {}
 
   getListClients(page: number): Observable<any> {
-    return this.HTTP.get(this.URL_CLIENTS + '/page/' + page).pipe(
+    return this.HTTP.get(this.PROXY + this.URL_CLIENTS + '/page/' + page).pipe(
       map((response: any) => {
         (response.content as IClients[]).map(client => {
           return client;
