@@ -2,13 +2,13 @@
   "name": "zapateria",
   "version": "0.0.0",
   "scripts": {
-    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
-    "ng": "ng",
     "start": "node server.js",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
+    "postinstall": "ng build --aot --prod",
+    "ng": "ng",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "postinstall": "ng build --aot --prod",
     "e2e": "ng e2e"
   },
   "private": true,
