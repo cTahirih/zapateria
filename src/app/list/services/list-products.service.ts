@@ -11,13 +11,14 @@ import { Router } from '@angular/router';
 export class ListProductsService {
   errorMessage: string;
   private URL_PRODUCTS =  'https://pos-zapateria.herokuapp.com/api/productos';
+  private PROXY = 'https://cors-anywhere.herokuapp.com/';
   constructor(
     private HTTP: HttpClient,
     private router: Router
   ) {}
 
   getListProducts(page: number): Observable<any> {
-    return this.HTTP.get(this.URL_PRODUCTS + '/pages/' + page).pipe(
+    return this.HTTP.get(this.PROXY + this.URL_PRODUCTS + '/page/' + page).pipe(
       tap((response: any) => {
         (response.content as IProduct[]).forEach(product => {
           console.log(product);
